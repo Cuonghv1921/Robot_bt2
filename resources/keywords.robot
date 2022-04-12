@@ -1,12 +1,7 @@
 *** Settings ***
-Library     SeleniumLibrary
-Variables    ../pageobjectmodel/elements.py
-
-*** Variable ***
-${url_login}        https://www.phptravels.net/login
-${url_signup}       https://www.phptravels.net/signup
-${browser}          chrome
-${msg}              "Wrong credentials. try again!"
+Library      SeleniumLibrary
+Variables    ../resources/pageobjectmodel/elements.py
+Resource     ../data/variablesinput.robot
 
 *** Keywords ***
 # Login keywords
