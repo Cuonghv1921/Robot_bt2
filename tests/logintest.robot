@@ -1,8 +1,7 @@
 *** Settings ***
 Library          SeleniumLibrary
-Resource         ../resources/keywords.robot
-Resource         ../data/variablesinput.robot
-Variables        ../resources/pageobjectmodel/elements.py
+Resource        ../resources/POM_loginPage.resource
+Resource         ../data/variablesinput.resource
 Test Setup       Open browser to login
 Test Teardown    Close All Browsers
 
@@ -10,24 +9,20 @@ Test Teardown    Close All Browsers
 login successfully
     [Tags]    Smoke
     Input Email and Password    ${right_email}    ${right_pwd}
-    Click login button
-    Login successfully msg
+    verify Login successfully
 
 login failed, wrong email and right password
     [Tags]    Regression
     Input Email and Password    ${wrong_email}    ${right_pwd}
-    Click login button
-    login failed msg
+    verify Login failed
 
 login failed, wrong email and wrong password
     [Tags]    Regression
     Input Email and Password    ${wrong_email}    ${wrong_pwd}
-    Click login button
-    login failed msg
+    verify Login failed
 
 login failed, right email and wrong password
     [Tags]    Regression
     Input Email and Password    ${right_email}    ${wrong_pwd}
-    Click login button
-    login failed msg
+    verify Login failed
     

@@ -16,6 +16,6 @@ ${right_pwd}        demouser
 ${first_name}       Cuong
 ${last_name}        Ha
 ${phone}            0123456789
-${email}            txt111@gmail.com
+${email}            txt..@gmail.com
 ${pwd}              123445
 ${acc_type}         Supplier

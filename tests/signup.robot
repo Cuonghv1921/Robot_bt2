@@ -1,8 +1,7 @@
 *** Settings ***
 Library          SeleniumLibrary
-Resource         ../resources/keywords.robot
-Resource         ../data/variablesinput.robot
-Variables        ../resources/pageobjectmodel/elements.py
+Resource        ../resources/POM_loginPage.resource
+Resource         ../data/variablesinput.resource
 Test Setup       Open browser to register
 Test Teardown    Close All Browsers
 
@@ -15,8 +14,7 @@ Register successfully
     Input email             ${email}
     Input password          ${pwd}
     Select account type     ${acc_type}
-    Click sign up button
-    Sign up successfully msg
+    verify Sign up successfully
 
 Register faield wehn email is existed
     [Tags]    Smoke
@@ -26,5 +24,4 @@ Register faield wehn email is existed
     Input email             ${email}
     Input password          ${pwd}
     Select account type     ${acc_type}
-    Click sign up button
-    Sign up failed msg
+    verify Sign up failed
